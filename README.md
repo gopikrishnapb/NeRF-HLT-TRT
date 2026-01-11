@@ -2,8 +2,6 @@
 
 This repository contains an implementation of **Neural Radiance Fields (NeRF)** trained entirely from scratch using PyTorch, followed by **GPU-optimized inference using NVIDIA TensorRT with Layer Fusion optimizations**.
 
-The project includes the full NeRF training pipeline, standard PyTorch-based inference, and TensorRT-accelerated inference with performance benchmarking to demonstrate the speedups achieved through hardware-specific optimization.
-
 ---
 
 ## Results
@@ -23,3 +21,34 @@ This project uses the **Lego synthetic NeRF dataset**.
 2. **Placement:** Place the downloaded file in the following directory:
    ```text
    data/lego_200x200.npz
+   
+## Environment Setup
+
+# 1. Create Conda Environment
+conda create -n nerf -y python=3.10
+conda activate nerf
+
+# 2. Install CUDA
+CUDA 11.8 is recommended.
+
+# 3. Install PyTorch (CUDA 11.8)
+pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 \
+            torchaudio==2.0.2+cu118 torchdata==0.6.1 \
+            --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
+            
+# 4. Install Remaining Dependencies
+pip install -r requirements.txt
+
+# 5. Install TensorRT
+🔗 TensorRT Installation Guide:
+https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html
+
+Verify your installation:
+python -c "import tensorrt as trt; print(trt.__version__)"
+
+# Run
+Train NeRF: python Scripts/nerf.py
+
+PyTorch Inference: python Scripts/inference.py
+
+TensorRT Inference: python Scripts/tensorrt_inference.py
