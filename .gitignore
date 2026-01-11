@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Data & models
+data/
+checkpoints/
+*.onnx
+*.trt
+*.engine
+*.pt
+
+# Outputs
+final_render/
+final_render_tensorrt/
+depth_render/
+graphs/
+
+# OS
+.DS_Store
