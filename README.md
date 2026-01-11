@@ -47,8 +47,10 @@ Verify your installation:
 python -c "import tensorrt as trt; print(trt.__version__)"
 
 # Run
-Train NeRF: python Scripts/nerf.py
+python Scripts/nerf.py
 
-PyTorch Inference: python Scripts/inference.py
+python Scripts/inference.py
+
+python Scripts/trt_inference.py
 
 TensorRT Inference: python Scripts/tensorrt_inference.py
