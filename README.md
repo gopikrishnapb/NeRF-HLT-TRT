@@ -1,4 +1,4 @@
-# NeRF from Scratch with LayerFusion-TensorRT Acceleration
+ NeRF from Scratch with LayerFusion-TensorRT Acceleration
 
 This repository contains an implementation of **Neural Radiance Fields (NeRF)** trained entirely from scratch using PyTorch, followed by **GPU-optimized inference using NVIDIA TensorRT with Layer Fusion optimizations**.  
 The project includes NeRF training, PyTorch-based inference, and TensorRT-accelerated inference with performance benchmarking.
@@ -35,34 +35,33 @@ conda activate nerf
 CUDA 11.8 is recommended
 
 ## 3. Install PyTorch (CUDA 11.8)
-	```text
-	    pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 \
-            torchaudio==2.0.2+cu118 torchdata==0.6.1 \
-            --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
+```
+ pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 \
+ torchaudio==2.0.2+cu118 torchdata==0.6.1 \
+ --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118) 
+```
 
 ## 4. Install Remaining Dependencies
-	```text
-	pip install -r requirements.txt
 ```
-## 5. TensorRT Installation
+pip install -r requirements.txt
+```
+
+#  TensorRT Installation
 🔗 TensorRT Installation Guide:
 https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html
 
 Verify your installation:
-	```text
-	python -c "import tensorrt as trt; print(trt.__version__)"
+```python -c "import tensorrt as trt; print(trt.__version__)"
 ```
+
 # Run
-	```text
-	python Scripts/nerf.py
-	
-	python Scripts/inference.py
-
-	python Scripts/tensorrt_inference.py
-
+```
+python Scripts/nerf.py  
+python Scripts/inference.py
+python Scripts/tensorrt_inference.py
+```
 ## Disclaimer
 
 This code is released for **research and academic purposes only**.
 The authors do not grant any license for commercial use.
 If you intend to use this code for commercial purposes, please contact the authors.
-
