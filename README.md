@@ -51,6 +51,5 @@ python Scripts/nerf.py
 
 python Scripts/inference.py
 
-python Scripts/trt_inference.py
 
 TensorRT Inference: python Scripts/tensorrt_inference.py
